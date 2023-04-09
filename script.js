@@ -6,7 +6,7 @@ function addMealCategories(category) {
     var div = document.createElement("div");
     div.setAttribute("class", "card");
     div.setAttribute("style", "width: 18rem;");
-    div.addEventListener("click", function(e) {
+    div.addEventListener("click", function (e) {
 
         // let cc = document.getElementById("categories-container");
         // cc.style.visibility = "hidden";
@@ -26,7 +26,7 @@ function addMealCategories(category) {
     img.setAttribute("src", category.strCategoryThumb);
     img.setAttribute("class", "card-img-top");
     img.setAttribute("alt", "...");
-    img.addEventListener("click", function(e) {
+    img.addEventListener("click", function (e) {
         //alert('clicled on img');
     })
 
@@ -87,11 +87,11 @@ async function fetchMealCategories() {
         .catch(error => console.error(error));
 
     console.log("categories ", categories);
-    let trie = createTrieNode();
+    trie = createTrieNode();
 
     for (let i = 0; i < categories.length; i++) {
         const category = categories[i];
-        insert(trie, category.strCategory, i);
+        insert(trie, category.strCategory.toLowerCase(), i);
     }
 
 }
@@ -104,20 +104,34 @@ const searchInput = document.getElementById("search-input");
 
 searchInput.addEventListener("keyup", () => {
 
-    const searchTerm = searchInput.value.trim();
+    let searchTerm = searchInput.value.trim().toLowerCase();
     console.log("search Term ", searchTerm);
 
+
+    document.getElementById('categories-container').innerHTML = '';
 
     if (searchTerm) {
         const searchResult = search(trie, searchTerm);
 
+        console.log("cats", categories);
+        console.log("searchResult ", searchResult);
+
+        console.log(typeof (searchResult));
+
+
         categories.forEach(category => {
             //if category.strCategory contains in searchResult
             // then add the category to the categories-container
+            searchResult.forEach(str => {
+                if (str == category.strCategory.toLowerCase()) {
+                    addMealCategories(category);
+                }
+            });
+
         })
+    } else {
+        fetchMealCategories();
     }
-
-
 
 });
 
@@ -141,7 +155,8 @@ function insert(trie, word, index) {
             current.children[char] = createTrieNode();
         }
         current = current.children[char];
-        current.words.push(index);
+        //current.words.push(index);
+        current.words.push(word);
     }
     current.isEndOfWord = true;
 }
