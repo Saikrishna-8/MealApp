@@ -16,7 +16,7 @@ function addMealCategories(category) {
         document.getElementById("categories-container").style.height = "0px";
         //document.getElementById("meals-container").style.visibility = 'visible';
 
-        window.location.href = window.location.origin + `/meals.html?cat=${category.strCategory}`;
+        window.location.href = window.location.origin + "/MealApp" + `/meals.html?cat=${category.strCategory}`;
 
     })
 

@@ -1,6 +1,6 @@
 var meals;
 //let favoriteMealsG;
-String.prototype.replaceAt = function(index, replacement) {
+String.prototype.replaceAt = function (index, replacement) {
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
 }
 
@@ -83,9 +83,9 @@ async function addMealItem(meal, favoriteMeals) {
     var div = document.createElement("div");
     div.setAttribute("class", "card");
     div.setAttribute("style", "width: 18rem;");
-    div.addEventListener("click", function(e) {
+    div.addEventListener("click", function (e) {
         if (e.target.tagName !== "BUTTON") {
-            window.location.href = window.location.origin + `/mealdetail.html?idMeal=${meal.idMeal}`;
+            window.location.href = window.location.origin + "/MealApp" + `/mealdetail.html?idMeal=${meal.idMeal}`;
         }
     })
 
@@ -95,7 +95,7 @@ async function addMealItem(meal, favoriteMeals) {
     img.setAttribute("src", meal.strMealThumb);
     img.setAttribute("class", "card-img-top");
     img.setAttribute("alt", "...");
-    img.addEventListener("click", function(e) {
+    img.addEventListener("click", function (e) {
         //alert('clicled on img');
     })
 
@@ -141,7 +141,7 @@ async function addMealItem(meal, favoriteMeals) {
 
 
 
-    AddToFavorite.addEventListener("click", function(e) {
+    AddToFavorite.addEventListener("click", function (e) {
 
 
         //favoriteMeals = JSON.parse(localStorage.getItem("favoriteMeals")) || [];
