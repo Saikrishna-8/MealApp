@@ -63,18 +63,18 @@ h2 {
 
 .meals-container {
     /* width: 100% !important; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: .1%;
     padding: 0px;
 }
 
 #allMeals-container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin: 0 auto;
 }
 
 #favourites-container {
-    border: 2px solid rgb(0, 9, 128);
+    /* border: 2px solid rgb(0, 9, 128); */
 }
 
 
