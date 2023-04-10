@@ -16,10 +16,11 @@ function addMealCategories(category) {
         document.getElementById("categories-container").style.height = "0px";
         //document.getElementById("meals-container").style.visibility = 'visible';
 
-        window.location.href = window.location.origin + "/MealApp" + `/meals.html?cat=${category.strCategory}`;
+        //window.location.href = window.location.origin + `/meals.html?cat=${category.strCategory}`;
+
+        window.location.assign(`/meals.html?cat=${category.strCategory}`);
 
     })
-
 
     // create a new img element
     var img = document.createElement("img");
@@ -173,6 +174,9 @@ function search(trie, prefix) {
     return current.words;
 }
 
+
+// var baseTag = document.getElementById("base-tag");
+// baseTag.href = window.location.origin + "/MealApp/";
 // const searchResult = search(trie, "sai");
 // const matchedWords = searchResult.map((index) => words[index]);
 
