@@ -18,7 +18,7 @@ function addMealCategories(category) {
 
         //window.location.href = window.location.origin + `/meals.html?cat=${category.strCategory}`;
 
-        window.location.assign(`/MealApp/meals.html?cat=${category.strCategory}`);
+        window.location.assign(`/meals.html?cat=${category.strCategory}`);
 
     })
 
