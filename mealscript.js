@@ -87,7 +87,7 @@ async function addMealItem(meal, favoriteMeals) {
         if (e.target.tagName !== "BUTTON") {
             //window.location.href = window.location.origin + `/mealdetail.html?idMeal=${meal.idMeal}`;
 
-            window.location.assign(`/mealdetail.html?idMeal=${meal.idMeal}`);
+            window.location.assign(`/MealApp/mealdetail.html?idMeal=${meal.idMeal}`);
         }
     })
 
