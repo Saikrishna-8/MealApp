@@ -16,7 +16,8 @@ function addMealCategories(category) {
         document.getElementById("categories-container").style.height = "0px";
         //document.getElementById("meals-container").style.visibility = 'visible';
 
-        window.location.href = window.location.origin + window.location.pathname.split("/")[1] + `/meals.html?cat=${category.strCategory}`;
+        console.log(window.location.href = window.location.origin + "/" + window.location.pathname.split("/")[1] + `/meals.html?cat=${category.strCategory}`);
+        window.location.href = window.location.origin + "/" + window.location.pathname.split("/")[1] + `/meals.html?cat=${category.strCategory}`;
 
         // window.location.assign(`/meals.html?cat=${category.strCategory}`);
 
