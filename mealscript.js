@@ -85,9 +85,11 @@ async function addMealItem(meal, favoriteMeals) {
     div.setAttribute("style", "width: 18rem;");
     div.addEventListener("click", function (e) {
         if (e.target.tagName !== "BUTTON") {
-            //window.location.href = window.location.origin + `/mealdetail.html?idMeal=${meal.idMeal}`;
 
-            window.location.assign(`/MealApp/mealdetail.html?idMeal=${meal.idMeal}`);
+            console.log(window.location.origin + "/" + window.location.pathname.split("/")[1] + `/mealdetail.html?idMeal=${meal.idMeal}`);
+            window.location.href = window.location.origin + "/" + window.location.pathname.split("/")[1] + `/mealdetail.html?idMeal=${meal.idMeal}`;
+
+            // window.location.assign(`/mealdetail.html?idMeal=${meal.idMeal}`);
         }
     })
 
